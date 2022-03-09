@@ -1,0 +1,8 @@
+{
+ 
+    "launch": {
+
+    },
+    "workbench.editor.tabSizing": "shrink",
+    "liveServer.settings.port": 5501
+}

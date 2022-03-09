@@ -5,28 +5,109 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>first project with html,css,php,mysql,js</title>
+        <style>
+          .pad-16 i {
+            font-weight: inherit;
+          }
+    
+          .navhome .right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          .navhome .right i {
+            font-weight: 900;
+    
+            margin-left: 30px;
+          }
+        </style>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="firstproject.css">
+        <!--W3 clone -->
+        <link rel="stylesheet" href="both.css" />
+        <link rel="stylesheet" href="home.css" />
+        <!--ending-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="searchbox.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     </head>
     <body>
+    
      <!--header-->
-     <header id="header">
-     <a  href="#" class="logo"><img src="logoimage.jpg" alt=" "> </a>
+    <header id="header">
+
+     <a  href="#" class="logo"><img src="JasimCodes.png" alt="logo"> </a>
      <nav>
      <ul>
+
+     <li><a href="#search">search</a></li>
+     <li>
+     <div class="box">
+	   <i class="fa fa-search" aria-hidden="true"></i>
+	   <input type="text" name="">
+     </div>
+     </li>
+
      <li><a href="#home">home</a></li>
-     <li><a href="#courses">courses</a></li>
-     <li><a href="#services">services</a></li>
-     <li><a href="#testimonial">testimonials</a></li>
-     <li><a href="#contact">contact</a></li>
+     <li><a href="#here">courses 
+      <div class="dropdown-content">
+        <!--
+        <i class="fas fa-caret-down"> </i> </a>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">JQuery</a></li>
+        <li><a href="#">Javascript</a></li>-->
+      </div>
+     </li>
+     
+
+     <!--<li><a href="#services">services</a></li>-->
+     <li><a href="#testimonial">Tutorials</a></li>
+     <li><a href="files/our-team.html">contact</a></li>
+     <li><a href="#login">Login</a></li>
      </ul>
-     </nav>
+   </nav>
+   <div class="left">
+    <ul>
+      <li>
+        <a href="" class="pad-16"
+          >TUTORIALS <i class="bi bi-caret-down-fill"></i>
+        </a>
+      </li>
+      <li>
+        <a href="" class="pad-16"
+          >REFERENCES <i class="bi bi-caret-down-fill"></i>
+        </a>
+      </li>
+      <li>
+        <a href="" class="pad-16"
+          >EXAMPLES <i class="bi bi-caret-down-fill"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <!--  <i class="bi bi-search fa-3x"></i>
+    <i class="bi bi-search"></i>   -->
+  </div>
+
+        <!--  <i class="bi bi-search fa-3x"></i>
+        <i class="bi bi-search"></i>   -->
+      
+  
+
      <div class="fas fa-bars"></div>
-     </header>
+
+     <!--New section-->
+    </header>
      <!-- header section ends -->
 
 <!-- home section starts  -->
@@ -41,19 +122,205 @@
   <h1>education</h1>
   <h3>learn online from home</h3>
 
-  <a href="#course"><button> enroll now >></button></a>  
-
-  <div class="icons">
-    <a href="#" class="fab fa-facebook-f">facebook</a>
-    <a href="#" class="fab fa-twitter">twitter</a>
-    <a href="#" class="fab fa-instagram">INSTAGRAM</a>
-    <a href="#" class="fab fa-linkedin">linkedin</a>
+ <div class="header">
+  	<h2>Login</h2>
   </div>
+	 
+  <form method="post" action="login.php">
+  	<? php include('errors.php'); ?>
+  	<div class="input-group">
+  		<label>Username</label>
+  		<input type="text" name="username" >
+  	</div>
+  	<div class="input-group">
+  		<label>Password</label>
+  		<input type="password" name="password">
+  	</div>
+  	<div class="input-group" >
+  		<button type="submit" class="btn" name="login_user" >Login</button>
+  	</div>
+  	<p>
+  		Not yet a member? <a href="register.php">Sign up</a>
+  	</p>
+  </form>
+
+   <div class="header">
+  	<h2>Register</h2>
+  </div>
+	
+  <form method="post" action="register.php">
+  	<?php include('errors.php'); ?>
+  	<div class="input-group">
+  	  <label>Username</label>
+  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password_1">
+  	</div>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="password_2">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
+  </form>
+
+
+  <!--<a href="#course"><button> enroll now >></button></a> !-->
+  <div class="container" id="here">
+    <div class="leftnav">
+      <div class="title">HTML and CSS</div>
+      <a href="learnhtml.html">Learn HTML</a>
+      <a href="CSS/csscourse.html">Learn CSS</a>
+      <a href="">Learn W3.CSS</a>
+      <a href="">Learn Colors</a>
+      <a href="files/bootstrap/learnbootstrap.html">Learn Bootstrap 4</a>
+      <a href="">Learn Icons</a>
+      <a href="">Learn Graphics</a>
+      <a href="">Learn How To</a>
+      <div class="title">JavaScript</div>
+
+      <a href="">Learn javaScript</a>
+      <a href="">Learn jQuery</a>
+      <a href="">Learn AngularJS</a>
+      <a href="">Learn JSON</a>
+      <a href="">Learn AJAX</a>
+      <a href="">Learn W3.JS</a>
+      <div class="title">Server Side</div>
+
+      <a href="">Learn SQL</a>
+      <a href="">Learn PHP</a>
+      <a href="">Learn python</a>
+      <a href="">Learn ASP</a>
+      <a href="">Learn Node.js</a>
+      <a href="">Learn Raspberry Pi</a>
+
+      <div class="title">Web Building</div>
+
+      <a href="">Web Templates</a>
+      <a href="">Web Statistics</a>
+      <a href="">Web Certificates</a>
+      <a href="">Web Editor</a>
+
+      <div class="title">XML Tutorials</div>
+
+      <a href="">Web XML</a>
+      <a href="">XML AJAX</a>
+      <a href="">Learn XML DOM</a>
+      <a href="">Learn XML DTD</a>
+      <a href="">Learn XML Schema</a>
+      <a href="">Learn XSLT</a>
+      <a href="">Learn XQuery</a>
+
+      <div class="title">References</div>
+
+      <a href="">HTML Reference</a>
+      <a href="">CSS Reference</a>
+      <a href="">JS Reference</a>
+      <a href="">SQL Reference</a>
+      <a href="">PHP Reference</a>
+      <a href="">jQuery Reference</a>
+      <a href="">python Reference</a>
+      <a href="">Bootstrap Reference</a>
+    </div>
 
 </div>
 
 </div>
 </section>
+
+
+
+<!-- bottom section -->
+<div class="gray">
+  <div class="flex">
+    <div class="inner1" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">SQL</p>
+        <p class="lang_inner">A language for accessing databases</p>
+        <div class="btn">
+          <button>LEARN SQL</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner2" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">PHP</p>
+        <p class="lang_inner">A web server programming language</p>
+        <div class="btn">
+          <button>LEARN PHP</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner3" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">jQuery</p>
+        <p class="lang_inner">
+          A JavaScript library for developing web pages
+        </p>
+        <div class="btn">
+          <button>LEARN JQUERY</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="white">
+  <div class="flex">
+    <div class="inner1" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">W3.CSS</p>
+        <p class="lang_inner">
+          A modern CSS framework for faster and better responsive web
+          sites
+        </p>
+        <div class="btn">
+          <button>LEARN W3.CSS</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner2" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">Color Picker</p>
+        <a href="#"
+          ><img src="color_picure.png" alt="" class="picer"
+        /></a>
+      </div>
+    </div>
+
+    <div class="inner3" style="padding: 3%">
+      <div class="innerdit">
+        <p class="course_t">Bootstrap</p>
+        <p class="lang_inner">
+          Bootstrap is a CSS framework for designing better web pages
+        </p>
+        <div class="btn">
+          <button>LEARN BOOTSTRAP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  <div class="gray">uinliuh</div>
+<div class="white">buygkjgh</div> -->
+</div>
+</div>
+</div>
+
+<!--For icon -->
+ 
 
     </body>
 </html>
